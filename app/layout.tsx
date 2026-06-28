@@ -1,62 +1,35 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import FloatingCTA from '@/components/FloatingCTA';
+import type { Metadata } from 'next'
+import './globals.css'
+import MobileBottomBar from '@/components/MobileBottomBar'
+
+const KAKAO_URL = 'https://open.kakao.com/o/s8krZCBi'
+const PHONE = '010-4844-3101'
 
 export const metadata: Metadata = {
-  title: '통영시 아파트 전문 공인중개사 | 희정 부동산',
-  description: '통영시 아파트 매수·매도 전문 공인중개사 희정님. 통영 부동산 시세 분석, 아파트 매수 상담, 지역 정보 제공. 지금 바로 카카오로 무료 상담하세요.',
-  keywords: ['통영시 아파트', '통영 부동산', '경남 통영 아파트 매수', '통영 아파트 시세', '통영 공인중개사', '힐스테이트', '통영힐스테이트', '힐스테이트통영', '통영 힐스테이트 아파트', '힐스테이트 통영 시세'],
-  openGraph: {
-    title: '통영시 아파트 전문 공인중개사 | 희정 부동산',
-    description: '통영시 아파트 매수·매도 전문 공인중개사 희정님과 함께하세요.',
-    locale: 'ko_KR',
-    type: 'website',
-  },
-};
+  title: '코코맘 통영 부동산 이야기 | 힐스테이트 통영 전문',
+  description: '통영 죽림지구 힐스테이트 통영 분양 전문. 코코맘이 직접 발로 뛰며 모은 진짜 정보.',
+  keywords: '힐스테이트 통영, 통영 아파트 분양, 통영 죽림지구, 힐스테이트 통영 분양가',
+}
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: '희정 부동산',
-  description: '통영시 아파트 전문 공인중개사',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: '통영시',
-    addressRegion: '경상남도',
-    addressCountry: 'KR',
-  },
-  telephone: '010-4844-3101',
-  areaServed: '통영시',
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="bg-white text-gray-900">
-        <header className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-          <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
-            <span className="font-bold text-lg text-blue-700">통영 희정 부동산</span>
-            <a
-              href="tel:010-4844-3101"
-              className="text-sm font-medium text-gray-600 hover:text-blue-700"
-            >
-              📞 010-4844-3101
+      <body className="bg-[#F8F9FA]">
+        <header className="bg-[#1E3A5F] text-white sticky top-0 z-40 shadow-md">
+          <div className="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <span className="font-bold text-base md:text-lg">🏠 코코맘 통영 부동산 이야기</span>
+            <a href={`tel:${PHONE}`} className="text-xs md:text-sm text-gray-200 hover:text-white">
+              {PHONE}
             </a>
           </div>
         </header>
-        <main>{children}</main>
-        <FloatingCTA />
+
+        <main className="pb-20 md:pb-0">
+          {children}
+        </main>
+
+        <MobileBottomBar phone={PHONE} kakaoUrl={KAKAO_URL} />
       </body>
     </html>
-  );
+  )
 }
