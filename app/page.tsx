@@ -1,103 +1,177 @@
-import ContactSection from '@/components/ContactSection';
+import Link from 'next/link'
+import ContactSection from '@/components/ContactSection'
+import FloatingCTA from '@/components/FloatingCTA'
 
-const services = [
-  {
-    icon: '🏠',
-    title: '아파트 매수 상담',
-    desc: '통영시 아파트 단지별 특징, 가격대, 학군 정보까지. 처음 사시는 분도 걱정 없습니다.',
-  },
-  {
-    icon: '📊',
-    title: '시세 분석',
-    desc: '최근 실거래가 기반으로 정확한 시세를 알려드립니다. 적정 가격에 사실 수 있도록 도와드립니다.',
-  },
-  {
-    icon: '🗺️',
-    title: '지역 정보',
-    desc: '통영 토박이가 알려주는 동네 정보. 편의시설, 교통, 생활 환경을 솔직하게 말씀드립니다.',
-  },
-];
+const KAKAO_URL = 'https://open.kakao.com/o/s8krZCBi'
+const PHONE = '010-4844-3101'
 
-export default function HomePage() {
+const posts = [
+  {
+    slug: 'interior-84',
+    title: '힐스테이트 통영, 브랜드 새 아파트의 실내는 다르네요',
+    excerpt: '84A 4bay 판상형의 드레스룸부터 아일랜드 조리대까지. 직접 모델하우스 다녀온 후기를 솔직하게 풀어봅니다.',
+  },
+  {
+    slug: 'landmark',
+    title: '힐스테이트 통영, 랜드마크 단지의 품격',
+    excerpt: 'KTX통영역 호재까지 더해진 통영 최고의 브랜드 단지. 왜 랜드마크인지 정리했습니다.',
+  },
+  {
+    slug: 'premium-plan',
+    title: '힐스테이트 통영, 평면부터 프리미엄',
+    excerpt: '손에 닿는 부분까지 다른 마감재. 주방 디스플레이 컨트롤러, 고급 타일까지 살펴봤어요.',
+  },
+  {
+    slug: 'future',
+    title: '힐스테이트 통영, 통영의 미래를 대표할 아파트',
+    excerpt: '죽림 시가지 인접에 이마트·하나로마트 생활권. KTX 개통 후 입지 가치가 더 오릅니다.',
+  },
+]
+
+const priceData = [
+  { type: '84A', area: '25.65평', price: '4억1천~4억5천만원' },
+  { type: '84B', area: '25.67평', price: '4억~4억3천만원' },
+  { type: '109', area: '33.21평', price: '5억3천~5억8천만원' },
+  { type: '145', area: '44.16평', price: '7억3천~7억9천만원' },
+]
+
+export default function Home() {
   return (
-    <div className="max-w-2xl mx-auto px-4">
-      {/* Hero */}
-      <section className="py-12 text-center">
-        <div className="inline-block bg-blue-50 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full mb-4">
-          경상남도 통영시 아파트 전문
-        </div>
-        <h1 className="text-2xl font-bold text-gray-900 mb-3 leading-tight">
-          통영시 아파트 전문<br />
-          <span className="text-blue-700">공인중개사 희정님</span>과 함께하세요
+    <>
+      {/* 섹션 1: 히어로 */}
+      <section className="bg-[#1E3A5F] text-white py-16 px-4 text-center">
+        <p className="text-[#F5A623] font-bold text-sm mb-2 tracking-widest">HILLSTATE TONGYEONG</p>
+        <h1 className="text-2xl md:text-4xl font-black mb-2 leading-tight">
+          통영 최고의 브랜드 아파트<br />힐스테이트 통영
         </h1>
-        <p className="text-gray-600 mb-8 leading-relaxed">
-          통영에서 직접 발로 뛰며 쌓은 아파트 매수·매도 경험.<br />
-          복잡한 부동산 거래, 희정님이 처음부터 끝까지 함께합니다.
+        <p className="text-gray-300 text-sm md:text-base mb-8 mt-3">
+          코코맘이 직접 발로 뛰며 모은 진짜 정보
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href="https://open.kakao.com/KAKAO_PLACEHOLDER"
+            href={KAKAO_URL}
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#FEE500] text-gray-900 font-bold px-8 py-4 rounded-xl text-lg shadow-md hover:bg-yellow-400 transition-colors"
+            className="bg-[#F5A623] text-gray-900 font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
           >
-            💬 지금 카카오로 문의하기
+            💬 카카오로 문의하기
           </a>
           <a
-            href="tel:010-XXXX-XXXX"
-            className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-300 text-gray-700 font-semibold px-8 py-4 rounded-xl text-lg hover:border-blue-400 hover:text-blue-700 transition-colors"
+            href={`tel:${PHONE}`}
+            className="border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-[#1E3A5F] transition"
           >
-            📞 전화 상담
+            📞 {PHONE}
           </a>
         </div>
       </section>
 
-      {/* About */}
-      <section className="py-8 bg-blue-50 rounded-2xl px-6 mb-8">
-        <h2 className="text-lg font-bold text-gray-900 mb-3">희정님은 이런 분입니다</h2>
-        <ul className="space-y-2 text-gray-700">
-          <li className="flex items-start gap-2">
-            <span className="text-blue-500 font-bold mt-0.5">✓</span>
-            통영시 아파트 매수·매도 전문
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-blue-500 font-bold mt-0.5">✓</span>
-            현지 시세와 실거래가를 정확하게 파악
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-blue-500 font-bold mt-0.5">✓</span>
-            처음 아파트 사시는 분들도 단계별 안내
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="text-blue-500 font-bold mt-0.5">✓</span>
-            카카오·전화 빠른 응답 (오전 9시~오후 9시)
-          </li>
-        </ul>
+      {/* 섹션 2: 코코맘 소개 */}
+      <section className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-white border-2 border-[#1E3A5F] rounded-xl p-6">
+          <p className="text-lg font-bold text-[#1E3A5F] mb-2">👩 코코맘입니다</p>
+          <p className="text-gray-700 leading-relaxed">
+            통영 죽림지구에 살면서 힐스테이트 통영을 직접 발로 뛰며 알아봤어요.<br />
+            아파트 구매 고민 있으시면 편하게 물어보세요!
+          </p>
+        </div>
       </section>
 
-      {/* Services */}
-      <section className="py-8 mb-8">
-        <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">도움드릴 수 있는 것들</h2>
-        <div className="space-y-4">
-          {services.map((s) => (
-            <div key={s.title} className="border border-gray-200 rounded-xl p-5 flex gap-4">
-              <span className="text-3xl">{s.icon}</span>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">{s.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
+      {/* 섹션 3: 핵심 정보 카드 */}
+      <section className="max-w-4xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold text-[#1E3A5F] mb-4">힐스테이트 통영 핵심 정보</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { icon: '📍', title: '위치', desc: '경상남도 통영시 광도면\n죽림 시가지 인접' },
+            { icon: '🏢', title: '규모', desc: '총 784세대\n지하4층 지상 최고29층 6개동' },
+            { icon: '🚄', title: '호재', desc: 'KTX통영역 개통 예정\n통영 랜드마크 단지' },
+          ].map((item) => (
+            <div key={item.title} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+              <p className="text-2xl mb-2">{item.icon}</p>
+              <p className="font-bold text-[#1E3A5F] mb-1">{item.title}</p>
+              <p className="text-gray-600 text-sm whitespace-pre-line">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <ContactSection />
+      {/* 섹션 4: 블로그 글 목록 */}
+      <section className="max-w-4xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold text-[#1E3A5F] mb-4">📝 코코맘의 현장 이야기</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/posts/${post.slug}`} className="block group">
+              <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div className="h-2 bg-[#1E3A5F]" />
+                <div className="p-5">
+                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#1E3A5F] transition leading-snug">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm mb-3 leading-relaxed">{post.excerpt}</p>
+                  <span className="text-[#1E3A5F] text-sm font-medium">자세히 보기 →</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <footer className="py-8 text-center text-gray-400 text-sm">
-        <p>통영 희정 부동산 | 경상남도 통영시</p>
-        <p className="mt-1">© 2024 희정 부동산. All rights reserved.</p>
-      </footer>
-    </div>
-  );
+      {/* 섹션 5: 공급가 테이블 */}
+      <section className="max-w-4xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold text-[#1E3A5F] mb-4">💰 공급가 요약</h2>
+        <div className="overflow-x-auto rounded-xl border border-gray-200">
+          <table className="w-full text-sm bg-white">
+            <thead>
+              <tr className="bg-[#1E3A5F] text-white">
+                <th className="py-3 px-4 text-left">타입</th>
+                <th className="py-3 px-4 text-left">전용면적</th>
+                <th className="py-3 px-4 text-left">분양가(최저~최고)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {priceData.map((row, i) => (
+                <tr key={row.type} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="py-3 px-4 font-bold text-[#1E3A5F]">{row.type}</td>
+                  <td className="py-3 px-4 text-gray-700">{row.area}</td>
+                  <td className="py-3 px-4 text-gray-900 font-medium">{row.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* 섹션 6: 커뮤니티 */}
+      <section className="max-w-4xl mx-auto px-4 pb-8">
+        <div className="bg-[#1E3A5F] text-white rounded-xl p-6 text-center">
+          <p className="text-[#F5A623] font-bold text-xs mb-2 tracking-widest">COMMUNITY</p>
+          <p className="font-bold text-lg mb-1">전국 최고 수준 커뮤니티 1,129평</p>
+          <p className="text-gray-300 text-sm">
+            단지 내 수영장 · 피트니스 · 스크린골프 · 어린이집 · 작은도서관
+          </p>
+        </div>
+      </section>
+
+      {/* 섹션 7: 하단 CTA */}
+      <section className="bg-[#F5A623] py-12 px-4 text-center">
+        <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-2">지금 바로 문의하세요!</h2>
+        <p className="text-gray-800 text-sm mb-6">잔여세대 소진 중 — 서두르세요</p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href={KAKAO_URL}
+            target="_blank"
+            className="bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
+          >
+            💬 카카오 오픈채팅
+          </a>
+          <a
+            href={`tel:${PHONE}`}
+            className="bg-white text-[#1E3A5F] font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
+          >
+            📞 {PHONE}
+          </a>
+        </div>
+      </section>
+
+      <FloatingCTA kakaoUrl={KAKAO_URL} />
+    </>
+  )
 }
