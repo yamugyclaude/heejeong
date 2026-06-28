@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import MobileBottomBar from '@/components/MobileBottomBar'
 
-const KAKAO_URL = 'https://open.kakao.com/o/s8krZCBi'
 const PHONE = '010-4844-3101'
 
 export const metadata: Metadata = {
@@ -28,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-        <MobileBottomBar phone={PHONE} kakaoUrl={KAKAO_URL} />
+        <MobileBottomBar phone={PHONE} />
       </body>
     </html>
   )
