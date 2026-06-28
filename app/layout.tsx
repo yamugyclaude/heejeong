@@ -25,7 +25,7 @@ const jsonLd = {
     addressRegion: '경상남도',
     addressCountry: 'KR',
   },
-  telephone: '010-XXXX-XXXX',
+  telephone: '010-4844-3101',
   areaServed: '통영시',
 };
 
@@ -47,10 +47,10 @@ export default function RootLayout({
           <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
             <span className="font-bold text-lg text-blue-700">통영 희정 부동산</span>
             <a
-              href="tel:010-XXXX-XXXX"
+              href="tel:010-4844-3101"
               className="text-sm font-medium text-gray-600 hover:text-blue-700"
             >
-              📞 010-XXXX-XXXX
+              📞 010-4844-3101
             </a>
           </div>
         </header>
