@@ -1,16 +1,15 @@
-'use client';
+'use client'
 
-export default function FloatingCTA() {
+const KAKAO_URL = 'https://open.kakao.com/o/s8krZCBi'
+
+export default function FloatingCTA({ kakaoUrl = KAKAO_URL }: { kakaoUrl?: string }) {
   return (
     <a
-      href="https://open.kakao.com/o/s8krZCBi"
+      href={kakaoUrl}
       target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#FEE500] text-gray-900 font-bold px-4 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-colors"
-      aria-label="카카오 상담"
+      className="fixed bottom-6 right-6 z-40 hidden md:flex items-center gap-2 bg-[#F5A623] text-gray-900 font-bold py-3 px-5 rounded-full shadow-lg hover:brightness-110 transition"
     >
-      <span className="text-xl">💬</span>
-      <span className="text-sm">카카오 상담</span>
+      💬 카카오 문의
     </a>
-  );
+  )
 }
