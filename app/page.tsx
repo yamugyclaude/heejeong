@@ -2,7 +2,6 @@ import Link from 'next/link'
 import ContactSection from '@/components/ContactSection'
 import FloatingCTA from '@/components/FloatingCTA'
 
-const KAKAO_URL = 'https://open.kakao.com/o/s8krZCBi'
 const PHONE = '010-4844-3101'
 
 const posts = [
@@ -49,15 +48,8 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href={KAKAO_URL}
-            target="_blank"
-            className="bg-[#F5A623] text-gray-900 font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
-          >
-            💬 카카오로 문의하기
-          </a>
-          <a
             href={`tel:${PHONE}`}
-            className="border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-[#1E3A5F] transition"
+            className="bg-[#F5A623] text-gray-900 font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
           >
             📞 {PHONE}
           </a>
@@ -156,22 +148,15 @@ export default function Home() {
         <p className="text-gray-800 text-sm mb-6">잔여세대 소진 중 — 서두르세요</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href={KAKAO_URL}
-            target="_blank"
-            className="bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
-          >
-            💬 카카오 오픈채팅
-          </a>
-          <a
             href={`tel:${PHONE}`}
-            className="bg-white text-[#1E3A5F] font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
+            className="bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
           >
             📞 {PHONE}
           </a>
         </div>
       </section>
 
-      <FloatingCTA kakaoUrl={KAKAO_URL} />
+      <FloatingCTA />
     </>
   )
 }
