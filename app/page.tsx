@@ -1,8 +1,5 @@
 import Link from 'next/link'
 import ContactSection from '@/components/ContactSection'
-import FloatingCTA from '@/components/FloatingCTA'
-
-const PHONE = '010-4844-3101'
 
 const posts = [
   {
@@ -43,17 +40,9 @@ export default function Home() {
         <h1 className="text-2xl md:text-4xl font-black mb-2 leading-tight">
           통영 최고의 브랜드 아파트<br />힐스테이트 통영
         </h1>
-        <p className="text-gray-300 text-sm md:text-base mb-8 mt-3">
+        <p className="text-gray-300 text-sm md:text-base mt-3">
           코코맘이 직접 발로 뛰며 모은 진짜 정보
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href={`tel:${PHONE}`}
-            className="bg-[#F5A623] text-gray-900 font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
-          >
-            📞 {PHONE}
-          </a>
-        </div>
       </section>
 
       {/* 섹션 2: 코코맘 소개 */}
@@ -62,7 +51,7 @@ export default function Home() {
           <p className="text-lg font-bold text-[#1E3A5F] mb-2">👩 코코맘입니다</p>
           <p className="text-gray-700 leading-relaxed">
             통영 죽림지구에 살면서 힐스테이트 통영을 직접 발로 뛰며 알아봤어요.<br />
-            아파트 구매 고민 있으시면 편하게 물어보세요!
+            아파트 구매 고민 있으시면 편하게 댓글로 물어보세요!
           </p>
         </div>
       </section>
@@ -144,19 +133,11 @@ export default function Home() {
 
       {/* 섹션 7: 하단 CTA */}
       <section className="bg-[#F5A623] py-12 px-4 text-center">
-        <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-2">지금 바로 문의하세요!</h2>
-        <p className="text-gray-800 text-sm mb-6">잔여세대 소진 중 — 서두르세요</p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href={`tel:${PHONE}`}
-            className="bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
-          >
-            📞 {PHONE}
-          </a>
-        </div>
+        <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-2">궁금한 점이 있으신가요?</h2>
+        <p className="text-gray-800 text-sm">댓글로 편하게 문의해 주세요!</p>
       </section>
 
-      <FloatingCTA />
+      <ContactSection />
     </>
   )
 }
