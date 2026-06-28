@@ -1,25 +1,30 @@
+const KAKAO_URL = 'https://open.kakao.com/o/s8krZCBi'
+const PHONE = '010-4844-3101'
+
 export default function ContactSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-700 to-blue-900 text-white rounded-2xl p-6 mb-8 text-center">
-      <p className="text-sm font-semibold text-blue-200 mb-2">무료 상담</p>
-      <h2 className="text-xl font-bold mb-2">이 아파트 더 알고 싶으세요?</h2>
-      <p className="text-blue-100 text-sm mb-6">1분 무료 상담으로 궁금한 것 모두 해결하세요</p>
+    <div className="bg-[#F5A623] rounded-xl p-6 my-8 text-center">
+      <p className="font-bold text-gray-900 text-lg mb-1">
+        📞 궁금한 점 있으시면 편하게 연락주세요!
+      </p>
+      <p className="text-gray-800 text-sm mb-5">
+        잔여세대 현황 · 계약 상담 · 동호수 확인
+      </p>
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         <a
-          href="https://open.kakao.com/KAKAO_PLACEHOLDER"
+          href={KAKAO_URL}
           target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-[#FEE500] text-gray-900 font-bold px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors"
+          className="bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-lg hover:brightness-110 transition"
         >
-          💬 카카오로 문의
+          💬 카카오 오픈채팅
         </a>
         <a
-          href="tel:010-XXXX-XXXX"
-          className="inline-flex items-center justify-center gap-2 bg-white/20 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/30 transition-colors border border-white/30"
+          href={`tel:${PHONE}`}
+          className="bg-white text-[#1E3A5F] font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition"
         >
-          📞 010-XXXX-XXXX
+          📞 {PHONE}
         </a>
       </div>
-    </section>
-  );
+    </div>
+  )
 }
