@@ -37,7 +37,7 @@ export default function Page() {
         <h2 className="text-xl font-bold text-[#1E3A5F] mt-8 mb-4">다양한 타입으로 선택지 확보</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
           <li>59㎡ ~ 145㎡ 다양한 타입 구성</li>
-          <li>주력 타입 84㎡ 판상형 4bay 중심</li>
+          <li>주력 타입 84㎡ 판상형과 타워형 두 타입 주력</li>
           <li>1~2인 가구부터 대가족까지 선택 가능</li>
         </ul>
 
