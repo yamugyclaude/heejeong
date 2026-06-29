@@ -27,7 +27,7 @@ export default function Page() {
         </p>
         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
           <li>고급 타일 마감 — 주방 바닥과 벽 모두</li>
-          <li>아일랜드 조리대 기본 적용</li>
+          <li>아일랜드 조리대 (엔지니어드스톤) 기본 적용</li>
           <li>수납 공간 설계가 실용적</li>
         </ul>
 
