@@ -16,7 +16,7 @@ export default function Page() {
 
       <div className="prose prose-gray max-w-none">
         <p className="text-gray-700 leading-relaxed mb-6">
-          통영에서 10년 넘게 살아온 입장에서 힐스테이트 통영의 위치는
+          통영에서 50년 넘게 살아온 입장에서 힐스테이트 통영의 위치는
           제가 봐도 탐나는 자리입니다. 조용하면서도 편의시설은 가깝고, 앞으로 더 좋아질 호재가 있어요.
         </p>
 
