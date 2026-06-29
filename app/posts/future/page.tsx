@@ -31,12 +31,11 @@ export default function Page() {
         <p className="text-gray-700 leading-relaxed mb-6">
           KTX통영역이 개통되면 서울~통영이 훨씬 빨라집니다.
           관광 인구 증가는 물론, 통영으로 이주를 고려하는 수요도 늘어날 거예요.
-          지금 입주 전에 들어가는 분들이 가장 좋은 가격에 들어가는 셈입니다.
         </p>
 
         <h2 className="text-xl font-bold text-[#1E3A5F] mt-8 mb-4">지금이 마지막 기회</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          잔여세대가 빠르게 소진되고 있어요. 입주 전에 결정하는 게 가격 면에서 유리하고,
+          잔여세대가 빠르게 소진되고 있어요. 현재 선택이 가격 면에서 유리하고,
           원하는 동·호수를 고를 수 있는 선택권도 지금이 가장 넓을 때입니다.
         </p>
 
