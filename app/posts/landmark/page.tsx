@@ -22,7 +22,7 @@ export default function Page() {
 
         <h2 className="text-xl font-bold text-[#1E3A5F] mt-8 mb-4">통영 1%를 위한 아파트</h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          힐스테이트는 현대건설의 프리미엄 브랜드입니다. 전국 어디에 들어서든
+          힐스테이트는 현대 엔지니어링의 프리미엄 브랜드입니다. 전국 어디에 들어서든
           주변 시세를 리드하는 경향이 있어요. 통영에서도 마찬가지입니다.
           784세대 규모의 대단지가 죽림 시가지 바로 옆에 자리잡습니다.
         </p>
